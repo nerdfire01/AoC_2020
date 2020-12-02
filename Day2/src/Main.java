@@ -56,12 +56,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("Der erste Split sieht so aus:");
-        System.out.println("low number: "+lowNumber[0]);
-        System.out.println("high number: "+highNumber[0]);
-        System.out.println("letter: "+letter[0]);
-        System.out.println("password: "+passwords[0]);
-
         //for Schleife für jede Zeile
         for(int i=0; i<l; i++){
 
@@ -76,7 +70,7 @@ public class Main {
             }
 
             //Schauen, ob die Zahl des Buchstabens innerhalb des Rahmens ist
-            if(count_letter<highNumber[i] && count_letter>lowNumber[i]){
+            if(count_letter <= highNumber[i] && count_letter >= lowNumber[i]){
                 valid_passwords++;
             }
 
