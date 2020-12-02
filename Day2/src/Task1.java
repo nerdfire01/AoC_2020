@@ -17,7 +17,7 @@ public class Task1 {
         int counter_passwords = 0;
         Task1 task = new Task1();
 
-        ArrayList<Password> password =task.readFile(file);
+        ArrayList<Password> password = task.readFile(file);
         counter_passwords = task.valid_Passwords(password);
         System.out.println("Es gibt " + counter_passwords + " mögliche Passwörter.");
 
@@ -35,7 +35,7 @@ public class Task1 {
             reader = new BufferedReader(new FileReader(Filename));
             for (int i = 0; i < l; i++) {
                 input_text[i] = reader.readLine();
-                Password p1=new Password();
+                Password p1 = new Password();
 
                 //Split Text in cp and password
                 String in_h1 = input_text[i];

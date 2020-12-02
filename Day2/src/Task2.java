@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Task2 extends Task1{
+public class Task2 extends Task1 {
 
     //Attribute
     int l = 1000;
@@ -16,7 +16,7 @@ public class Task2 extends Task1{
         int counter_passwords = 0;
         Task2 task = new Task2();
 
-        ArrayList<Password> password=task.readFile(file);
+        ArrayList<Password> password = task.readFile(file);
         counter_passwords = task.valid_Passwords(password);
         System.out.println("Es gibt " + counter_passwords + " mögliche Passwörter.");
 
