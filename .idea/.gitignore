@@ -8,8 +8,8 @@
 /httpRequests/
 
 # Config Files for the ide
-.idea
+/home/david/projects/InteliJ/AoC_2020/.idea
 *.iml
 
 # compiled source code
-out
+/home/david/projects/InteliJ/AoC_2020/out
