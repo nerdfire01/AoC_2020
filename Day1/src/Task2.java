@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Main {
+public class Task2 {
 
     public static void main(String[] args) {
         //Attribute
@@ -44,7 +44,7 @@ public class Main {
 
                     if (sum == 2020) {
                         int ergebnis = input[i] * input[j] * input[m];
-//                        System.out.println("Die Zahlen sind "+zahl1+", "+zahl3+" und "+zahl3);
+//                        System.out.println("Die Zahlen sind "+zahl1+", "+zahl2+" und "+zahl3);
                         System.out.println("Das Ergebnis ist: " + ergebnis);
                         return;
                     }
