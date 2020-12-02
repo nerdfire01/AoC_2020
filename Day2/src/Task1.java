@@ -23,7 +23,6 @@ public class Task1 {
         String[]letter=new String[l];
         int[]lowNumber=new int[l];
         int[]highNumber=new int[l];
-        Character character;
 
 
 
