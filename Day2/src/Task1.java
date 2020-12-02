@@ -4,28 +4,28 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Task1 {
+    //Attribute
+    int l = 1000;
 
-    public static void main(String[] args) {
-        //Attribute
-        int l = 1000;
-        int valid_passwords=0;
+    //Arrays
+    String[]input_text = new String[l];
+    String[]passwords = new String[l];
+    String[]letter=new String[l];
+    int[]lowNumber=new int[l];
+    int[]highNumber=new int[l];
 
-
-
-        //Arrays
-        String[]input_text = new String[l];
-        String[]passwords = new String[l];
-        //String[]cp = new String[l];
-
-
-//        String[]lowNumber=new String[l];
-//        String[]highNumber=new String[l];
-        String[]letter=new String[l];
-        int[]lowNumber=new int[l];
-        int[]highNumber=new int[l];
+    public static void main(String[] args){
+        String file= "/home/david/projects/InteliJ/AoC_2020/Day2/src/Input.txt";
+        int counter_passwords=0;
+        Task1 task= new Task1();
+        task.readFile(file);
+        counter_passwords= task.valid_Passwords();
+        System.out.println("Es gibt "+counter_passwords+" mögliche Passwörter.");
 
 
+    }
 
+    public void readFile(String Filename){
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader("/home/david/projects/InteliJ/AoC_2020/Day2/src/Input.txt"));
@@ -55,6 +55,11 @@ public class Task1 {
             e.printStackTrace();
         }
 
+    }
+
+    public int valid_Passwords(){
+        int valid_passwords=0;
+
         //for Schleife für jede Zeile
         for(int i=0; i<l; i++){
 
@@ -74,7 +79,6 @@ public class Task1 {
 
 
         }
-
-        System.out.println("Es gibt "+valid_passwords+" mögliche Passwörter.");
+        return valid_passwords;
     }
 }
