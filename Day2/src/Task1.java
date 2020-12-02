@@ -60,13 +60,12 @@ public class Task1 {
         for(int i=0; i<l; i++){
 
             String h1=passwords[i];
-            String h2=letter[i];
-            Character h3=h2.charAt(0);
+            Character h2 =letter[i].charAt(0);
             int count_letter = 0;
 
             //Zählen wie oft der Buchstabe im Wort vorhanden ist
             for (int m = 0; m < h1.length(); m++) {
-                if (h1.charAt(m) == h3) count_letter++;
+                if (h1.charAt(m) == h2) count_letter++;
             }
 
             //Schauen, ob die Zahl des Buchstabens innerhalb des Rahmens ist
