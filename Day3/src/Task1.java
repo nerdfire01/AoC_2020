@@ -18,7 +18,7 @@ public class Task1 {
 
         // Auslesen der Datei und Fahrenlassen des Schlittens
         map=task.readFile(file);
-        tree_conuter=task.ride(map);
+        tree_conuter=task.ride_1(map);
         System.out.println("Es werden "+tree_conuter+" Bäume getroffen.");
 
 
@@ -49,13 +49,17 @@ public class Task1 {
 
     }
 
-    public int ride(ArrayList<String> map){
+    public int ride_1(ArrayList<String> map){
+        return ride(map,1,3);
+    }
+
+    public int ride(ArrayList<String> map, int slope_d, int slope_r){
         int tree_counter=0;
 
         //some help Variables
         int position=0;
 
-        for (int i=0; i<l; i++){
+        for (int i=0; i<l; i=i+slope_d){
 
             if(position>=width){
                 position=position%width;
@@ -65,7 +69,7 @@ public class Task1 {
             if(map.get(i).charAt(position)=='#'){
                 tree_counter++;
             }
-            position=position+3;
+            position=position+slope_r;
 
         }
 
