@@ -1,43 +1,17 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class Task1 {
+public class Task2 extends Task1{
     int length = 1101;
 
     public static void main(String[] args) {
         String file = "/home/david/projects/InteliJ/AoC_2020/Day4/src/Input.txt";
         ArrayList<Passport> passwords = new ArrayList<>();
-        Task1 task1 = new Task1();
+        Task2 task2 = new Task2();
 
-        passwords = task1.analyze(task1.readfile(file));
+        passwords = task2.analyze(task2.readfile(file));
         System.out.println("There are " + passwords.size() + " valid passwords.");
     }
 
-    public ArrayList<String> readfile(String file) {
-        ArrayList<String> input = new ArrayList<>();
-
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            for (int i = 0; i < length; i++) {
-                String h1 = new String();
-                h1 = reader.readLine();
-                input.add(h1);
-            }
-
-            reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        return input;
-    }
 
     public ArrayList<Passport> analyze(ArrayList<String> file_input) {
         ArrayList<Passport> passports = new ArrayList<>();
@@ -112,9 +86,8 @@ public class Task1 {
                 }
             }
 
-            if(passport.check_passport()){
+            if(passport.check_passport_valid()){
                 passports.add(passport);
-
             }
 
             i = i + line_counter;
