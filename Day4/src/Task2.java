@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
-public class Task2 extends Task1{
+public class Task2 extends Task1 {
     int length = 1101;
+
 
     public static void main(String[] args) {
         String file = "/home/david/projects/InteliJ/AoC_2020/Day4/src/Input.txt";
@@ -32,13 +33,13 @@ public class Task2 extends Task1{
                 }
 
             }
-            line_counter2 = line_counter -1;
+            line_counter2 = line_counter - 1;
 
             //Erstellen eines neuen Passports und füllen dieses mit Daten
             Passport passport = new Passport();
 
             //for für jede einzelne Zeile
-            for (int m = i; m < i + line_counter2;m++) {
+            for (int m = i; m < i + line_counter2; m++) {
 
                 //some helping variables
                 String h1;
@@ -50,7 +51,7 @@ public class Task2 extends Task1{
 
                 //variables for length of line
                 int l = 0;
-                int l_h1=h1.length();
+                int l_h1 = h1.length();
 
                 // for für mehrere Werte in einer Zeile
                 for (int n = 0; n < 8; n++) {
@@ -86,7 +87,7 @@ public class Task2 extends Task1{
                 }
             }
 
-            if(passport.check_passport_valid()){
+            if (passport.check_passport_valid()) {
                 passports.add(passport);
             }
 
