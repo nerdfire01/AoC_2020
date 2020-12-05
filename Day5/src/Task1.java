@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 public class Task1 {
 
-    int length=908;
+    int length = 908;
 
     public static void main(String[] args) {
         String file = "/home/david/projects/InteliJ/AoC_2020/Day5/src/Input.txt";
-        ArrayList<BoardingPass> boardingPasses=new ArrayList<>();
+        ArrayList<BoardingPass> boardingPasses = new ArrayList<>();
         Task1 task1 = new Task1();
-        int SeatID=0;
+        int SeatID = 0;
 
         //Methodes
         boardingPasses = task1.decode(task1.readfile(file));
-        SeatID=task1.highest_SeatID(boardingPasses);
-        System.out.println("The highest SeatID is: "+SeatID);
+        SeatID = task1.highest_SeatID(boardingPasses);
+        System.out.println("The highest SeatID is: " + SeatID);
     }
 
     public ArrayList<String> readfile(String file) {
@@ -43,20 +43,19 @@ public class Task1 {
         return input;
     }
 
-    public ArrayList<BoardingPass> decode(ArrayList<String> input){
-        ArrayList<BoardingPass> boardingPasses=new ArrayList<>();
+    public ArrayList<BoardingPass> decode(ArrayList<String> input) {
+        ArrayList<BoardingPass> boardingPasses = new ArrayList<>();
         String h1;
         String h2;
 
-        for(int i=0; i<length; i++){
-            h1=input.get(i).substring(0,7);
-            h2=input.get(i).substring(7,10);
-            System.out.println(h1);
-            System.out.println(h2);
+        for (int i = 0; i < length; i++) {
+            h1 = input.get(i).substring(0, 7);
+            h2 = input.get(i).substring(7, 10);
 
-            BoardingPass boardingPass=new BoardingPass();
-            boardingPass.row=boardingPass.row(h1);
-            boardingPass.column=boardingPass.column(h2);
+            BoardingPass boardingPass = new BoardingPass();
+            boardingPass.row = boardingPass.row(h1);
+            boardingPass.column = boardingPass.column(h2);
+            boardingPass.SeatID = boardingPass.column + boardingPass.row * 8;
 
             boardingPasses.add(boardingPass);
 
@@ -65,13 +64,13 @@ public class Task1 {
         return boardingPasses;
     }
 
-    public int highest_SeatID(ArrayList<BoardingPass> boardingPasses){
-        int SeatID=0;
-        int l=boardingPasses.size();
-        for(int i=0; i<l;i++){
-            int produkt=(boardingPasses.get(i).column)+(boardingPasses.get(i).row)*8;
-            if(produkt>SeatID){
-                SeatID=produkt;
+    public int highest_SeatID(ArrayList<BoardingPass> boardingPasses) {
+        int SeatID = 0;
+        int l = boardingPasses.size();
+        for (int i = 0; i < l; i++) {
+            int produkt = boardingPasses.get(i).SeatID;
+            if (produkt > SeatID) {
+                SeatID = produkt;
             }
 
         }
