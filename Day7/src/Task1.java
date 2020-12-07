@@ -198,7 +198,7 @@ public class Task1 {
     }
 
     public int count(ArrayList<String> lugages) {
-        return lugages.size();
+        return lugages.size()-1;
 
     }
 
